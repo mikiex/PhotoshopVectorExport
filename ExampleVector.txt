@@ -1,0 +1,23 @@
+
+shape		;Vector Count = 11
+	fcb	-72,16
+	fcb	0,-72
+	fcb	136,0
+	fcb	0,32
+	fcb	-64,0
+	fcb	64,32
+	fcb	0,40
+	fcb	-72,-40
+	fcb	-16,32
+	fcb	-32,0
+	fcb	-16,-24
+
+
+Shape 1		;Vector Count = 6
+	fcb	0,-128
+	fcb	0,256
+	fcb	8,0
+	fcb	0,-256
+	fcb	-8,0
+	fcb	0,0
+
