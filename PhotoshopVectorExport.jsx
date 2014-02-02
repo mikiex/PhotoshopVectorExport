@@ -85,6 +85,16 @@ for (x=0; x<layers.length; x++)
 						alert(py+" is not an integer! use grid or pixel snap")
 					}
 				
+					if ((px >= 128 ) || (px <= -128)) // or
+					{
+						alert(px+" is out of 127 range")
+					}
+					
+					if ((py >= 128 ) || (py <= -128)) // or
+					{
+						alert(py+" is out of 127 range")
+					}
+				
                 if (Vmode == true)
                 {
 					px = px - prevx
