@@ -1,12 +1,12 @@
 
-Shape 2		;Vector Count = 4
+Shape2		;Vector Count = 4
 	fcb	0,0
 	fcb	-24,24
 	fcb	40,16
 	fcb	-16,-40
 
 
-Shape 1		;Vector Count = 7
+Shape1		;Vector Count = 7
 	fcb	-32,-64
 	fcb	16,32
 	fcb	-40,56
