@@ -15,12 +15,3 @@ Shape 1		;Vector Count = 7
 	fcb	-48,-64
 	fcb	-40,24
 
-
-Shape 3		;Vector Count = 6
-	fcb	-96,-176
-	fcb	0,120
-	fcb	40,-24
-	fcb	-8,-80
-	fcb	-8,-8
-	fcb	-24,-8
-
