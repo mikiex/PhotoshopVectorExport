@@ -1,17 +1,52 @@
 
-Shape2		;Vector Count = 4
-	fcb	0,0
-	fcb	-24,24
-	fcb	40,16
-	fcb	-16,-40
+beak		;Vector Count = 10
+	fcb	-27,69
+	fcb	-19,-7
+	fcb	5,-47
+	fcb	19,-20
+	fcb	19,17
+	fcb	1,59
+	fcb	-14,9
+	fcb	-8,-9
+	fcb	1,-54
+	fcb	-4,52
 
 
-Shape1		;Vector Count = 7
-	fcb	-32,-64
-	fcb	16,32
-	fcb	-40,56
-	fcb	96,8
-	fcb	16,-56
-	fcb	-48,-64
-	fcb	-40,24
+eyeball		;Vector Count = 2
+	fcb	15,37
+	fcb	11,-3
+
+
+bottom		;Vector Count = 4
+	fcb	-23,-62
+	fcb	-27,28
+	fcb	-3,50
+	fcb	10,15
+
+
+wing		;Vector Count = 6
+	fcb	20,-81
+	fcb	6,26
+	fcb	-18,36
+	fcb	-29,-14
+	fcb	6,-38
+	fcb	35,-10
+
+
+eye		;Vector Count = 7
+	fcb	51,26
+	fcb	-15,-24
+	fcb	-30,3
+	fcb	-9,16
+	fcb	-1,34
+	fcb	27,-2
+	fcb	28,-27
+
+
+top		;Vector Count = 5
+	fcb	-1,59
+	fcb	27,-1
+	fcb	28,-33
+	fcb	-1,-46
+	fcb	-25,-32
 

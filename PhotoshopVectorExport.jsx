@@ -23,11 +23,11 @@ var pathItem;
 var subPathItem;
 var PathPoint;
 var xyoffset=128
-var AddEndCoords = true  //set this to false if you don't want to loop back to the first coordinate 
 var Vmode = true //take away 128 so we work in twos complement vectrex screen space (-127 to 127)
 var ReverseXY = true //vectrex X and Y are reversed, so we need to reverse coords
 var prevx = 0
 var prevy = 0
+var NegateY=true
 
 var MyFile = File.openDialog ("Save Path File", "PathFiles:*.txt;All Files:*.*", false)
 MyFile.open ("w", "?", "?");
@@ -54,7 +54,7 @@ for (x=0; x<layers.length; x++)
         pathItem = app.activeDocument.pathItems[i];
  //       MyFile.writeln(";[Path"+j+":"+pathItem.name+"]");
  //       MyFile.writeln(";Points="+pathItem.subPathItems[0].pathPoints.length); //first subpath only
-		if (AddEndCoords == true)
+		if (pathItem.subPathItems[0].closed ==true)
 			{
 			end = 1
 			}
@@ -102,6 +102,10 @@ for (x=0; x<layers.length; x++)
                 }
                 prevx=copypx//important to copy pre modified coords to previous
                 prevy=copypy
+				if(NegateY==true)
+				 {
+					py = -py //negate Y
+				 }
 				if (ReverseXY == true) 
 					{
 						MyFile.writeln("	fcb	"+py+","+px);
@@ -111,15 +115,20 @@ for (x=0; x<layers.length; x++)
 						MyFile.writeln("	fcb	"+px+","+py);
 					}
             }
-        if (AddEndCoords ==true) //probably should add the coords to a new array and add the end coords instead of this needless duplication
+			//if closed add an extra point to return back to the start point.
+        if (subPathItem.closed ==true) //probably should add the coords to a new array and add the end coords instead of this needless duplication
         {
                PathPoint = subPathItem.pathPoints[0]
                 px = PathPoint.anchor[0]-xyoffset
-                py = PathPoint.anchor[1] -xyoffset
+                py = PathPoint.anchor[1]-xyoffset
                 if (Vmode == true)
                 {
                  px = px - prevx
                  py = py - prevy
+				 if(NegateY==true)
+				 {
+					py = -py //negate Y
+				 }
                 }
                				if (ReverseXY == true) 
 					{
