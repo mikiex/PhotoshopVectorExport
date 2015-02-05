@@ -63,7 +63,7 @@ for (x=0; x<layers.length; x++)
 			end = 0
 			}
 		MyFile.write("\n");
-		MyFile.writeln(layers[x].name+"		;"+"Vector Count = "+(pathItem.subPathItems[0].pathPoints.length+end))
+		MyFile.writeln("logo_"+layers[x].name+"		;"+"Vector Count = "+(pathItem.subPathItems[0].pathPoints.length+end))
 
         for(j=0;j<pathItem.subPathItems.length;j++)
         {
@@ -77,12 +77,15 @@ for (x=0; x<layers.length; x++)
                 copypy = py
 				if (isInt(px)==false)
 					{
-						alert(px+" is not an integer! use grid or pixel snap")
+						//alert(px+" is not an integer! use grid or pixel snap")
+						
 					}
 					
 					if (isInt(py)==false)
 					{
-						alert(py+" is not an integer! use grid or pixel snap")
+						
+						//alert(py+" is not an integer! use grid or pixel snap")
+						
 					}
 				
 					if ((px >= 128 ) || (px <= -128)) // or
@@ -108,11 +111,11 @@ for (x=0; x<layers.length; x++)
 				 }
 				if (ReverseXY == true) 
 					{
-						MyFile.writeln("	fcb	"+py+","+px);
+						MyFile.writeln("	fcb	"+parseInt(py)+","+parseInt(px));
 					}
 					else
 					{
-						MyFile.writeln("	fcb	"+px+","+py);
+						MyFile.writeln("	fcb	"+parseInt(px)+","+parseInt(py));
 					}
             }
 			//if closed add an extra point to return back to the start point.
@@ -132,11 +135,11 @@ for (x=0; x<layers.length; x++)
                 }
                				if (ReverseXY == true) 
 					{
-						MyFile.writeln("	fcb	"+py+","+px);
+						MyFile.writeln("	fcb	"+parseInt(py)+","+parseInt(px));
 					}
 					else
 					{
-						MyFile.writeln("	fcb	"+px+","+py);
+						MyFile.writeln("	fcb	"+parseInt(px)+","+parseInt(py));
 					}
          }
 		 prevx=0	//reset these - should move its scope to not be global instead
